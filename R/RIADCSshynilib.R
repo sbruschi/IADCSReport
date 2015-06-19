@@ -1,4 +1,4 @@
-library(RCurl)
+#library(RCurl)
 
 .onLoad <- function(libname, pkgname) {
   assign("pkg_globals", new.env(), envir=parent.env(environment()))
