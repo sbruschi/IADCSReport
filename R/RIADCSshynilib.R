@@ -51,7 +51,7 @@ R_IADCS_getData <- function(url, userpwd=NA, path= "./") {
   print ('R_IADCS_autorize_autorization')
   
   if (R_IADCS_autorize_autorization == FALSE){
-    stop("No Autorize request. Use R_IADCS_autorize_server to setup the token")
+    #stop("No Autorize request. Use R_IADCS_autorize_server to setup the token")
   }
   
   print (url)
