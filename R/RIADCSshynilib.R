@@ -1,8 +1,9 @@
-#library(RCurl)
+library(RCurl)
 
 .onLoad <- function(libname, pkgname) {
   #assign("pkg_globals", new.env(), envir=parent.env(environment()))
   #assign("R_IADCS_autorize_autorization", FALSE, pkg_globals)
+  print ("loading packages")
 }
 
 R_IADCS_autorize_server <-function(session=NULL){  
