@@ -1,8 +1,8 @@
 #library(RCurl)
 
 .onLoad <- function(libname, pkgname) {
-  assign("pkg_globals", new.env(), envir=parent.env(environment()))
-  assign("R_IADCS_autorize_autorization", FALSE, pkg_globals)
+  #assign("pkg_globals", new.env(), envir=parent.env(environment()))
+  #assign("R_IADCS_autorize_autorization", FALSE, pkg_globals)
 }
 
 R_IADCS_autorize_server <-function(session=NULL){  
@@ -20,9 +20,9 @@ R_IADCS_autorize_server <-function(session=NULL){
   #browser()
   
   if (data_json$valid_user == TRUE){
-      assign("R_IADCS_autorize_autorization", TRUE,  pkg_globals)
+      #assign("R_IADCS_autorize_autorization", TRUE,  pkg_globals)
   }else{
-      assign("R_IADCS_autorize_autorization", FALSE, pkg_globals)
+      #assign("R_IADCS_autorize_autorization", FALSE, pkg_globals)
   }
   return (data_json)
 }
@@ -46,13 +46,13 @@ R_IADCS_getData <- function(url, userpwd=NA, path= "./") {
   
   # check token
   #browser()
-  R_IADCS_autorize_autorization = get("R_IADCS_autorize_autorization", pkg_globals)
+  #R_IADCS_autorize_autorization = get("R_IADCS_autorize_autorization", pkg_globals)
   
-  print ('R_IADCS_autorize_autorization')
+  print (url)
   
-  if (R_IADCS_autorize_autorization == FALSE){
+  #if (R_IADCS_autorize_autorization == FALSE){
     #stop("No Autorize request. Use R_IADCS_autorize_server to setup the token")
-  }
+  #}
   
   print (url)
   
