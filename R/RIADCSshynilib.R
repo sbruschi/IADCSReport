@@ -27,14 +27,14 @@ R_IADCS_autorize_server <-function(session=NULL){
   return (data_json)
 }
 
-R_IADCS_getData_csv <- function(url, userpwd=NA) {  
+R_IADCS_getData_csv <- function(url, userpwd=NA, path= "./") {  
   data <- R_IADCS_getData(url, userpwd)
   # get data
   data_csv <- read.csv(textConnection(data))
   return(data_csv)
 }
 
-R_IADCS_getData_json <- function(url, userpwd=NA) {
+R_IADCS_getData_json <- function(url, userpwd=NA, path= "./") {
   data <- R_IADCS_getData(url, userpwd)
   # get data
   data_json <- fromJSON(data)
@@ -89,7 +89,7 @@ R_IADCS_getData <- function(url, userpwd=NA, path= "./") {
 }
 
 R_IADCS_PortalAuth <- function( path= "./" ) {  
-  auth_file = paste( path, "auth.txt")
+  auth_file = paste( path, "auth.txt", sep="")
   if ( file.exists(auth_file) == FALSE ) {
     stop( paste("Missing Authentication configuration file: PATH: ", path))
   }
